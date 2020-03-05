@@ -1,14 +1,30 @@
-# Web crawler for AlloCiné (allocine.fr), an entertainment website providing content on cinema
+# Web crawler for AlloCiné (allocine.fr)
 
 ~~ *This project was implemented in October 2017* ~~
 
-./crawling.sh pour lancer le spiderbot wtm parcourir et récolter les informations suivantes sur tous les films recensés sur Allociné
-url, title, img_url, synopsis, release_date, director, cast, genres, countries, runtime, press_rating, public_rating
+AlloCiné is an entertainment website providing content on cinema.
 
-encode les données récoltées au format JSON
+[*Scrapy*](https://scrapy.org/), a web-crawling framework in Python, is used.
 
-wtm_movies.json
-splitJSON.py
-movies/
+Information collected about all the films listed on Allociné.fr is as follows:
+* url
+* title
+* img_url
+* synopsis
+* release_date
+* director
+* cast
+* genres
+* countries
+* runtime
+* press_rating
+* public_rating
 
+To launch the spiderbot *wtm* browsing the website, type:
+```
+./crawling.sh 
+```
 
+Collected data is encoded in JSON format in a single file *wtm_movies.json*.
+
+Then use the script *splitJSON.py* to split each of the extracted movies (in JSON format) individually in the directory *movies/*.
